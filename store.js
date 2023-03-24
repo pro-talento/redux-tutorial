@@ -46,4 +46,18 @@ function todos(state = [], action) {
 
 const store = createStore(todos)
 
+const desuscriptor1 = store.subscribe(() => console.log('Escuchador1'))
+
+store.dispatch({
+  type: 'ADD_TODO',
+  payload: 'Tarea 1'
+})
+
+desuscriptor1()
+
+store.dispatch({
+  type: 'ADD_TODO',
+  payload: 'Tarea 2'
+})
+
 console.log(store.getState())
