@@ -37,6 +37,10 @@ function todos(state = [], action) {
     return state.concat([action.payload])
   }
 
+  if (action.type === 'REMOVE_TODO') {
+    return state.filter((todo) => todo !== action.payload)
+  }
+
   return state
 }
 
